@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/organisms/Sidebar";
 import { SideNavItem } from "@/types";
-import Header from "@/components/Header";
+import Header from "@/components/organisms/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBorderAll } from "@fortawesome/free-solid-svg-icons";
 
@@ -52,6 +52,11 @@ const SIDENAV_ITEMS: SideNavItem[] = [
         activePath: ["edict"],
       },
       {
+        title: "Quản lý từ",
+        path: "/edict/admin",
+        activePath: ["edict"],
+      },
+      {
         title: "Tác giả",
         path: "/elib/author",
         activePath: ["elib"],
@@ -59,6 +64,11 @@ const SIDENAV_ITEMS: SideNavItem[] = [
       {
         title: "Nhà xuất bản",
         path: "/elib/publisher",
+        activePath: ["elib"],
+      },
+      {
+        title: "Quản lý sách",
+        path: "/elib/admin",
         activePath: ["elib"],
       },
     ],
