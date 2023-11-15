@@ -133,7 +133,7 @@ export default function Header({}: Props) {
             className="m-auto rounded-full"
             width={35}
           />
-          <PoperWrapper show={show} setShow={setShow}>
+          <PoperWrapper show={show} setShow={setShow} position="bottom" offset="start">
             <Menu
               items={MENU_ITEMS}
               title="Vịt Anh"

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Book } from "@/types";
+import TextToolTip from "@/components/molecules/TextToolTip";
 
 type IProps = {
   item: Book;
@@ -26,43 +27,54 @@ export default function CardBook({ item }: IProps) {
       <div className="px-4 py-2">
         <Link
           href={`/elib/${item.code}`}
-          className="font-bold text-blue-700 text-lg"
+          className="font-bold text-blue-700 text-md"
         >
-          {item.title}
+          <TextToolTip className="p-2">
+            <p className="truncate">{item.title}</p>
+          </TextToolTip>
         </Link>
         <div className="text-sm text-gray-600 mt-2">
-          <div>
-            Thể loại:{" "}
-            {item.categories?.map((category, index) => (
-              <span key={index}>
-                <Link
-                  href={`/category/${category.code}`}
-                  className="hover:text-blue-700"
-                >
-                  {category.name}
-                </Link>
-                {index === item.categories.length - 1 ? "" : ", "}
-              </span>
-            ))}
-          </div>
-          <div>
-            Tác giả:{" "}
-            {item.authors?.length !== 0 ? (
-              item.authors?.map((author, index) => (
-                <span key={index}>
-                  <Link
-                    href={`/author/${author.code}`}
-                    className="hover:text-blue-700"
-                  >
-                    {author.name}
-                  </Link>
-                  {index === item.authors.length - 1 ? "" : ", "}
-                </span>
-              ))
-            ) : (
-              <span className="hover:text-blue-700">Chưa cập nhật</span>
-            )}
-          </div>
+          <TextToolTip
+            toolTip={
+              <div className="p-2 max-w-[200px]">
+                Tác giả:{" "}
+                {item.authors?.length !== 0 ? (
+                  item.authors?.map((author, index) => (
+                    <span key={index}>
+                      <Link
+                        href={`/author/${author.code}`}
+                        className="hover:text-blue-700"
+                      >
+                        {author.name}
+                      </Link>
+                      {index === item.authors.length - 1 ? "" : ", "}
+                    </span>
+                  ))
+                ) : (
+                  <span className="hover:text-blue-700">Chưa cập nhật</span>
+                )}
+              </div>
+            }
+          >
+            <div className="truncate">
+              Tác giả:{" "}
+              {item.authors?.length !== 0 ? (
+                item.authors?.map((author, index) => (
+                  <span key={index}>
+                    <Link
+                      href={`/author/${author.code}`}
+                      className="hover:text-blue-700"
+                    >
+                      {author.name}
+                    </Link>
+                    {index === item.authors.length - 1 ? "" : ", "}
+                  </span>
+                ))
+              ) : (
+                <span className="hover:text-blue-700">Chưa cập nhật</span>
+              )}
+            </div>
+          </TextToolTip>
           <p>Xuất bản: {item.year}</p>
         </div>
       </div>

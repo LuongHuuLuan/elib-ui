@@ -50,7 +50,7 @@ export default function SidebarItem({ item }: { item: SideNavItem }) {
                   <li key={index}>
                     <GroupText
                       leftIcon={
-                        <RectangleIcon size="small" direction="right" />
+                        <RectangleIcon size="small" direction="right"/>
                       }
                       className="cursor-pointer p-[4px] mt-2"
                     >

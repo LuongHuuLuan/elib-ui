@@ -5,7 +5,6 @@ type Props = {
   direction: "left" | "right" | "up" | "down";
   className?: string;
 };
-
 export default function RectangleIcon({
   size,
   direction,
@@ -34,6 +33,8 @@ export default function RectangleIcon({
     }
   };
   const getClassName = () =>
-    `inline-block border-white border-b-0 border-x-transparent border-zinc-300 ${getdirectionClass()} ${getsizeClass()} ${className?className:""}`;
+    `inline-block border-white border-b-0 border-x-transparent border-zinc-300 ${getdirectionClass()} ${getsizeClass()} ${
+      className ? className : ""
+    }`;
   return <div className={getClassName()}></div>;
 }
