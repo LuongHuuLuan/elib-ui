@@ -6,13 +6,13 @@ type Props = {
   items?: LinkItem[];
 };
 
-const PAGE_NAMES = [
+const PAGE_TITLES = [
   { title: "Trang chủ", path: null },
   { title: "Elib", path: "elib" },
   { title: "Edict", path: "edict" },
 ];
 
-export default function PageTitle({ items = PAGE_NAMES }: Props) {
+export default function PageTitle({ items = PAGE_TITLES }: Props) {
   const selectedLayout = useSelectedLayoutSegment();
   return (
     <div className="ml-4">

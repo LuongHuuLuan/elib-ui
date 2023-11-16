@@ -127,8 +127,8 @@ export default function Header({}: Props) {
           ref={menuPoper}
           onClick={toggleMenu}
         >
-          <Image
-            src={profileAvatar}
+          <img
+            src='/images/profile.jpg'
             alt="logo"
             className="m-auto rounded-full"
             width={35}

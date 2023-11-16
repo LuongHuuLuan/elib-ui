@@ -33,7 +33,7 @@ export type Book = {
   is_redirect_to_source: number;
   children_count: number;
   year: number;
-  count_view: string;
+  count_view: number;
   position: number;
   categories: Category[];
   book_documents: BookDocument[];
@@ -45,8 +45,8 @@ export type Category = {
   id: number;
   name: string;
   code: string;
-  parent_code: string;
-  children_count: number;
+  parent_code: string |null;
+  children_count: number |null;
   position: number | null;
 };
 

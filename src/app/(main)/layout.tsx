@@ -4,11 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBorderAll } from "@fortawesome/free-solid-svg-icons";
 import RootLayoutTemplate from "@/components/templates/RootLayout";
 
-export const metadata: Metadata = {
-  title: "Elib",
-  description: "Tìm kiếm sách hay",
-};
-
 const SIDENAV_ITEMS: SideNavItem[] = [
   {
     title: "Ứng dụng",
@@ -77,6 +72,17 @@ const SIDENAV_ITEMS: SideNavItem[] = [
   },
 ];
 
-export default function Home() {
-  return <RootLayoutTemplate sideBar={SIDENAV_ITEMS}>Home</RootLayoutTemplate>;
+export const metadata: Metadata = {
+  title: "Elib",
+  description: "Tìm kiếm sách hay",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <RootLayoutTemplate sideBar={SIDENAV_ITEMS}>{children}</RootLayoutTemplate>
+  );
 }
