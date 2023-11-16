@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MenuItem } from "@/types";
 import { useRouter } from "next/navigation";
-import GroupText from "@/components/atoms/GroupText";
+import GroupText from "@/components/molecules/GroupText";
 import RectangleIcon from "@/components/atoms/RectangleIcon";
 
 type Props = {

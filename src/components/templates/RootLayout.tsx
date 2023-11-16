@@ -1,5 +1,3 @@
-import { Inter } from "next/font/google";
-import "@/app/globals.css";
 import Sidebar from "@/components/organisms/Sidebar";
 import { SideNavItem, LinkItem } from "@/types";
 import Header from "@/components/organisms/Header";

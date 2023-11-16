@@ -10,8 +10,6 @@ type Props = {};
 const SIDENAV_ITEMS: SideNavItem[] = [
   {
     title: "Ứng dụng",
-    path: "/app",
-    subMenu: true,
     icon: <FontAwesomeIcon icon={faBorderAll} width={20} height={20} />,
     subMenuItems: [
       { title: "Elib", path: "/template/elib" },
@@ -21,55 +19,53 @@ const SIDENAV_ITEMS: SideNavItem[] = [
   },
   {
     title: "Menu",
-    path: "/menu",
-    subMenu: true,
     icon: <FontAwesomeIcon icon={faBars} width={20} height={20} />,
     subMenuItems: [
       {
         title: "Tìm sách",
         path: "/template/elib",
-        activePath: ["", "template/elib"],
+        activePath: ["/", "/template/elib"],
       },
-      { title: "Tra từ", path: "/template/edict", activePath: [""] },
+      { title: "Tra từ", path: "/template/edict", activePath: ["/"] },
       {
         title: "Tra tổng hợp",
         path: "/template/edict",
-        activePath: ["template/edict"],
+        activePath: ["/template/edict"],
       },
       {
         title: "Tra theo bộ thủ",
         path: "/template/edict/radical",
-        activePath: ["template/edict"],
+        activePath: ["/template/edict"],
       },
       {
         title: "Tra theo nét viết",
         path: "/template/edict/stroke",
-        activePath: ["template/edict"],
+        activePath: ["/template/edict"],
       },
       {
         title: "Tra theo hình thái",
         path: "/template/edict/variant",
-        activePath: ["template/edict"],
+        activePath: ["/template/edict"],
       },
       {
         title: "Quản lý từ",
         path: "/template/edict/admin",
-        activePath: ["template/edict"],
+        activePath: ["/template/edict"],
       },
       {
         title: "Tác giả",
         path: "/template/elib/author",
-        activePath: ["template/elib"],
+        activePath: ["/template/elib"],
       },
       {
         title: "Nhà xuất bản",
         path: "/template/elib/publisher",
-        activePath: ["template/elib"],
+        activePath: ["/template/elib"],
       },
       {
         title: "Quản lý sách",
         path: "/template/elib/admin",
-        activePath: ["template/elib"],
+        activePath: ["/template/elib"],
       },
     ],
   },
@@ -453,14 +449,18 @@ const BOOKS: Book[] = [
   },
 ];
 
-const PAGE_TITLES = [
-  { title: "Template", path: null },
+const TAB_BAR_ITEMS = [
+  { title: "Tên sách", path: "/template/elib" },
+  { title: "Tác giả", path: "/template/elib/author" },
+  { title: "Nhà xuất bản", path: "/template/elib/publisher" },
 ];
+
+const PAGE_TITLES = [{ title: "Template", path: null }];
 
 export default function ElibTemplatePage({}: Props) {
   return (
     <RootLayoutTemplate sideBar={SIDENAV_ITEMS} pageTitles={PAGE_TITLES}>
-      <ElibTemplate books={BOOKS} />
+      <ElibTemplate books={BOOKS} actionBar={TAB_BAR_ITEMS} />
     </RootLayoutTemplate>
   );
 }

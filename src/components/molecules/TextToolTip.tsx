@@ -8,27 +8,9 @@ type Props = {
   className?: string;
 };
 
-// const getTruncate = (str: string, n: number, useWordBoundary: boolean) => {
-//   if (str.length <= n) {
-//     return {
-//       text: str,
-//       isTruncate: false,
-//     };
-//   }
-//   const subString = str.slice(0, n - 1);
-//   return {
-//     text:
-//       (useWordBoundary
-//         ? subString.slice(0, subString.lastIndexOf(" "))
-//         : subString) + "&hellip;",
-//     isTruncate: str.length <= n,
-//   };
-// };
-
 export default function TextToolTip({ children, toolTip, className }: Props) {
   return (
     <div className={`relative group`}>
-      {/* <p className={`inline-block ${truncate ? "truncate" : ""}`}>{text}</p> */}
       {children}
       <PoperWrapper
         position="top"
